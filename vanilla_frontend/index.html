@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#0f172a] text-slate-200">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-slate-800 py-4">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black tracking-tighter text-blue-500">PORTFOLIO</a>
+            <div class="flex gap-6 items-center">
+                <a href="#projects" class="text-sm font-medium hover:text-white">Projects</a>
+                <a href="#products" class="text-sm font-medium hover:text-white">Store</a>
+                <a href="#blogs" class="text-sm font-medium hover:text-white">Blogs</a>
+                <a href="#skills" class="text-sm font-medium hover:text-white">Skills</a>
+                <a href="#contact" class="text-sm font-medium hover:text-white">Contact</a>
+                <div id="auth-links" class="flex gap-4">
+                    <a href="login.html" class="text-sm font-medium text-slate-400 hover:text-white">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 max-w-6xl mx-auto px-4">
+        <!-- Hero -->
+        <section class="py-20 text-center animate-fade-in">
+            <h1 class="text-6xl font-black mb-6">Full-stack <span class="text-blue-500">Developer</span></h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto">I build high-performance web applications using HTML, CSS, and Node.js.</p>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl font-bold mb-12 text-blue-500">Projects</h2>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Data from JS -->
+            </div>
+        </section>
+
+        <!-- Products (Shop) -->
+        <section id="products" class="py-20 border-t border-slate-800">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold text-emerald-500">Shop Products</h2>
+                <div id="cart-status" class="text-sm font-bold bg-slate-800 px-4 py-2 rounded-full hidden">
+                    🛒 <span id="cart-count">0</span> items
+                </div>
+            </div>
+            <div id="products-list" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Data from JS -->
+            </div>
+        </section>
+
+        <!-- Blogs -->
+        <section id="blogs" class="py-20">
+            <h2 class="text-3xl font-bold mb-12 text-orange-500">Latest Articles</h2>
+            <div id="blogs-list" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Data from JS -->
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="py-20">
+            <h2 class="text-3xl font-bold mb-12">Skills</h2>
+            <div id="skills-list" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Data from JS -->
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-20 max-w-2xl mx-auto">
+            <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 shadow-xl">
+                <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+                <form id="contact-form" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input name="first_name" placeholder="First Name" class="bg-slate-900 p-4 rounded-xl w-full border border-slate-700 outline-none focus:border-blue-500" required>
+                        <input name="last_name" placeholder="Last Name" class="bg-slate-900 p-4 rounded-xl w-full border border-slate-700 outline-none focus:border-blue-500" required>
+                    </div>
+                    <input name="email" type="email" placeholder="Email" class="bg-slate-900 p-4 rounded-xl w-full border border-slate-700 outline-none focus:border-blue-500" required>
+                    <textarea name="notes" placeholder="Your message" class="bg-slate-900 p-4 rounded-xl w-full border border-slate-700 outline-none focus:border-blue-500 min-h-[120px]" required></textarea>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 p-4 rounded-xl font-bold transition-all">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 Portfolio. Built with Vanilla JS.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
