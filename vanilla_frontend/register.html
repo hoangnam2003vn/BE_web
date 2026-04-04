@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#0f172a] text-slate-200 min-h-screen flex items-center justify-center">
+    <div class="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-600/10 blur-[120px] rounded-full -z-10"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-emerald-600/10 blur-[120px] rounded-full -z-10"></div>
+
+    <form id="register-form" class="bg-slate-800/50 backdrop-blur-xl p-10 rounded-3xl w-full max-w-md border border-slate-700 shadow-2xl animate-fade-in">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-black text-white">Create Account</h2>
+            <p class="text-slate-400 mt-2">Join our community</p>
+        </div>
+
+        <div id="error-msg" class="bg-red-500/10 text-red-400 p-4 rounded-xl mb-6 text-sm border border-red-500/20 hidden">
+            Registration failed
+        </div>
+
+        <div class="space-y-4">
+            <div class="space-y-1">
+                <label class="text-xs font-bold text-slate-500 uppercase ml-1">Username</label>
+                <input name="username" class="bg-slate-900/50 w-full p-4 rounded-xl border border-slate-700 focus:outline-none focus:border-blue-500 transition-all text-white" placeholder="johndoe" required>
+            </div>
+
+            <div class="space-y-1">
+                <label class="text-xs font-bold text-slate-500 uppercase ml-1">Email Address</label>
+                <input name="email" class="bg-slate-900/50 w-full p-4 rounded-xl border border-slate-700 focus:outline-none focus:border-blue-500 transition-all text-white" placeholder="name@company.com" type="email" required>
+            </div>
+
+            <div class="space-y-1">
+                <label class="text-xs font-bold text-slate-500 uppercase ml-1">Password</label>
+                <input name="password" class="bg-slate-900/50 w-full p-4 rounded-xl border border-slate-700 focus:outline-none focus:border-blue-500 transition-all text-white" placeholder="••••••••" type="password" required>
+            </div>
+
+            <input type="hidden" name="role" value="user">
+
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 p-4 rounded-xl font-black text-lg transition-all active:scale-[0.98] shadow-lg shadow-blue-900/20 mt-4">
+                Register
+            </button>
+        </div>
+
+        <div class="mt-8 text-center">
+            <p class="text-slate-400 text-sm">
+                Already have an account? <a href="login.html" class="text-blue-400 font-bold hover:underline">Sign in</a>
+            </p>
+        </div>
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

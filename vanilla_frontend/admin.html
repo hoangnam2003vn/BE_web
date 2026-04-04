@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#0f172a] text-slate-200 min-h-screen">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-slate-800 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black tracking-tighter text-blue-500">ADMIN PANEL</a>
+            <div class="flex gap-6 items-center">
+                <span id="user-info" class="text-sm font-medium text-slate-400">Loading...</span>
+                <button id="logout-btn" class="p-2 text-slate-400 hover:text-red-400 transition-colors">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 py-24 flex flex-col lg:flex-row gap-8">
+        <!-- Sidebar -->
+        <div class="w-full lg:w-72 shrink-0">
+            <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 shadow-xl sticky top-24">
+                <h2 class="text-2xl font-black mb-8 px-2 tracking-tight text-white">Management</h2>
+                <nav id="tabs-nav" class="space-y-2">
+                    <button data-tab="projects" class="w-full text-left px-4 py-4 rounded-2xl transition-all bg-blue-600 text-white font-bold">Projects</button>
+                    <button data-tab="blogs" class="w-full text-left px-4 py-4 rounded-2xl transition-all text-slate-400 hover:bg-slate-700/50 hover:text-slate-200 font-bold">Blogs</button>
+                    <button data-tab="skills" class="w-full text-left px-4 py-4 rounded-2xl transition-all text-slate-400 hover:bg-slate-700/50 hover:text-slate-200 font-bold">Skills</button>
+                    <button data-tab="products" class="w-full text-left px-4 py-4 rounded-2xl transition-all text-slate-400 hover:bg-slate-700/50 hover:text-slate-200 font-bold">Products</button>
+                    <button data-tab="orders" class="w-full text-left px-4 py-4 rounded-2xl transition-all text-slate-400 hover:bg-slate-700/50 hover:text-slate-200 font-bold">Orders</button>
+                    <button data-tab="customers" class="w-full text-left px-4 py-4 rounded-2xl transition-all text-slate-400 hover:bg-slate-700/50 hover:text-slate-200 font-bold">Contacts</button>
+                    <button data-tab="auditlogs" class="w-full text-left px-4 py-4 rounded-2xl transition-all text-slate-400 hover:bg-slate-700/50 hover:text-slate-200 font-bold">Audit Logs</button>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="flex-1 min-w-0">
+            <div id="content-area" class="bg-slate-800 rounded-[32px] p-8 border border-slate-700 shadow-xl min-h-[70vh]">
+                <!-- Dynamic Content Based on Tab -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modal-container" class="hidden fixed inset-0 z-[100] bg-slate-900/90 backdrop-blur-sm flex items-center justify-center p-4">
+        <div id="modal-content" class="bg-slate-800 w-full max-w-2xl rounded-[40px] border border-slate-700 shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+            <!-- Modal Body injected by JS -->
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
