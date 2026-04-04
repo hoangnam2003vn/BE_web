@@ -1,0 +1,60 @@
+const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+
+exports.register = async (req, res) => {
+  try {
+    const { username, password, email, role } = req.body;
+    
+    // Check if user already exists
+    const existingUser = await User.findOne({ $or: [{ email }, { username }] });
+    if (existingUser) {
+      return res.status(400).json({ error: 'Username or email already exists' });
+    }
+
+    const user = new User({ username, password, email, role });
+    await user.save();
+
+    const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);
+    res.status(201).send({ user, token });
+  } catch (error) {
+    res.status(400).send({ error: error.message });
+  }
+};
+
+exports.login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user || !(await user.comparePassword(password))) {
+      return res.status(401).send({ error: 'Invalid login credentials' });
+    }
+
+    const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);
+    res.send({ user, token });
+  } catch (error) {
+    res.status(400).send({ error: error.message });
+  }
+};
+
+exports.getMe = async (req, res) => {
+  res.send(req.user);
+};
+
+exports.updateProfile = async (req, res) => {
+  const updates = Object.keys(req.body);
+  const allowedUpdates = ['username', 'email', 'password', 'avatar'];
+  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
+
+  if (!isValidOperation) {
+    return res.status(400).send({ error: 'Invalid updates!' });
+  }
+
+  try {
+    updates.forEach((update) => req.user[update] = req.body[update]);
+    await req.user.save();
+    res.send(req.user);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+};
